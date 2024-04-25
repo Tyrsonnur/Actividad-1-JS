@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Par o Impar</title>
+    <title> Sumatoria de numeros </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
@@ -19,13 +19,17 @@
 </head>
 
 <body class="cuadro-principal">
-    <div>
-        <div class="cuadro-comparativa text-dark px-3">
-            <div class=" sumatoria-numeros" id="sumatoria">
-
+    <div class="cuadro-principal d-block">
+        <div>
+            <div class="cuadro-contenedor d-flex text-dark px-3">
+                <form class="d-block" id="formulary1">
+                    <h1 class="px-3"> Ingresa el numero </h1>
+                    <input type="text" id="sumatoriaInput" class="d-block mx-5 ms-4 my-3 w-75">
+                    <button type="submit" id="botobSumatoria" class="d-block mx-5"> Sumar </button>
+                </form>
             </div>
         </div>
-        <div class="cuadro-fondo">
+        <div class="cuadro-fondo d-flex">
             <button><a href="taller2.html"> Par o Impar </a></button>
             <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
             <button><a href="taller5.html"> Tabla de multiplicar</a></button>
@@ -33,19 +37,25 @@
         </div>
     </div>
     <script>
-        function sumatoria() {
-            let numero = parseInt(prompt(" Ingresa tu numero"))
+
+        let formulario = document.querySelector("#formulary1")
+
+        formulario.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            let numero = evento.target.sumatoriaInput.value
             let base = 0
             for (let x = 1; x <= numero; x++) {
                 base = base + x
             }
-            document.querySelector('#sumatoria').innerHTML = ` 
-                <div class="sumatoria-numeros" id="sumatoria">
-                    <h1>La sumatoria de numeros del 1 al ${numero} es: ${base}</h1>
-                </div>
-            </div>`
-        }
-        sumatoria()
+
+            document.querySelector('#formulary1').innerHTML = ` 
+        <form class="d-flex" id="formulary1">
+                <h1 class="px-3"> La sumatoria de numeros del 1 al ${numero} es: ${base}</h1>
+                <input type="text" id="sumatoriaInput" class="d-block mx-5 ms-4 my-3 w-75">
+                <button type="submit" id="botobSumatoria" class="d-block mx-5"> Sumar </button>
+            </form>`
+            evento.target.reset
+        })
     </script>
 </body>
 

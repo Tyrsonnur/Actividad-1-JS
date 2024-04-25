@@ -20,21 +20,38 @@
 </head>
 
 <body class="cuadro-principal">
-    <div>
-        <div class="cuadro-comparativa text-dark px-3">
-            <div class="logica-impar ">
-                <script>
-                    let numero;
-                    numero = prompt(" Por favor ingrese el numero")
+    <div class="d-block">
+        <div class="cuadro-contenedor text-dark px-3 d-flex">
+            <form id="formulary2" class="d-block">
+                <h1 class="mx-3"> Determina sí el valor de tu número es par o impar </h1>
+                <input type="text" id="comparativaInput" class=" d-block mx-5 ms-4 my-3 w-75">
+                <button type="submit" id="botonComparativa" class="d-block mx-5"> Determinar </button>
+            </form>
+            <script>
+
+                let formulario2 = document.querySelector("#formulary2")
+                formulario2.addEventListener(`submit`, function (evento) {
+                    evento.preventDefault()
+                    let numero = evento.target.comparativaInput.value
                     if (numero % 2 === 0) {
-                        document.write("El numero " + numero + " es par");
+                        document.querySelector("#formulary2").innerHTML = `
+                    <form id="formulary2" class="d-block">
+                        <h1 class="mx-3"> ${numero} es par </h1>
+                        <input type="text" id="comparativaInput">
+                        <button type="submit" id="botonComparativa" class="d-flex"> volver a comparar </button>
+                        </form>`
                     } else {
-                        document.write("El numero " + numero + " es impar");
+                        document.querySelector("#formulary2").innerHTML = `
+                    <form id="formulary2" class="d-block">
+                        <h1 class="mx-3"> ${numero} es impar </h1>
+                        <input type="text" id="comparativaInput">
+                        <button type="submit" id="botonComparativa" class="d-flex"> volver a comparar </button>
+                    </form>`
                     }
-                </script>
-            </div>
+                })
+            </script>
         </div>
-        <div class="cuadro-fondo">
+        <div class="cuadro-fondo d-flex">
             <button><a href="taller1.html"> Taller Sumatoria </a></button>
             <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
             <button><a href="taller5.html"> Tabla de multiplicar</a></button>

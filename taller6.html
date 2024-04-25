@@ -19,18 +19,18 @@
 </head>
 
 <body class="cuadro-principal">
-    <div class="d-flex">
+    <div class="d-block">
         <div>
-            <div class="cuadro-comparativa text-dark d-flex">
+            <div class="cuadro-contenedor text-dark d-flex">
                 <form class="d-block" id="formulary">
-                    <h1 class="px-3"> Ingresa el valor de tu promedio para calcular tu descuento</h1>
+                    <h1 class="px-3"> Ingresa el valor de tu promedio para calcular tu descuento </h1>
                     <input type="text" id="promedioInput" class=" d-block mx-5 ms-4 my-3 w-75">
                     <button type="submit" id="botonPromedio" class="d-block mx-5">
                         Calcular </button>
                 </form>
             </div>
         </div>
-        <div class="cuadro-fondo d-flex ">
+        <div class="cuadro-fondo d-flex">
             <button><a href="taller1.html"> Taller Sumatoria </a></button>
             <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
             <button><a href="taller5.html"> Tabla de multiplicar</a></button>
@@ -38,7 +38,6 @@
         </div>
     </div>
     <script>
-
         let formulario = document.querySelector("#formulary")
         console.log("🚀 ~ formulario:", formulario)
 
@@ -49,19 +48,26 @@
             let descuento = 0
             if (promedio >= 2.9 && promedio <= 4.0) {
                 descuento = 0.05
-            } else if (promedio > 4) {
+            } else if (promedio > 4.0 && promedio <= 5.0) {
                 descuento = 0.5
+            } else if (promedio > 5.0) {
+                alert("valor incorrecto, por favor corrige el valor ingresado")
             }
             let valorTotal = costoMatricula - (costoMatricula * descuento)
             document.querySelector("#formulary").innerHTML = `
             <form class="d-block" id="formulary">
                 <h1 class="px-3"> tu promedio es de ${promedio} y tu nueva matricula es de $ ${valorTotal}</h1>
                     <input type="text" id="promedioInput" class=" d-block mx-5 ms-4 my-3 w-75">
-                    <button type="submit" id="botonPromedio" class="d-block mx-5">
+                    <button type="submit" id="botonReiniciar" class="d-block mx-5">
                         Volver a calcular </button>
                 </form>`
             evento.target.reset()
         })
+
+        function restaurarFormulario() {
+            document.querySelector("#botonReiniciar").reset
+        }
+
     </script>
 </body>
 
