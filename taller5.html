@@ -20,37 +20,42 @@
 
 <body class="cuadro-principal">
     <div>
-        <div class="cuadro-comparativa text-dark px-3">
-            <div class="logica-multiplicacion" id="multiplicar">
-                <script>
-                    // let multiplicacion = prompt("ingresa el número que quieres multiplicar");
-                    //multiplicacion = parseInt();
-                    //function multiplicador() {
-                    //   for (let x = 0; x <= 10; x++) {
-                    //     multiplicador = multiplicacion * x;
-                    //   document.write(multiplicacion + "x" + i + "=" + multiplicador + "<br>");
-                    //}}
-                    let numero = parseInt(prompt(" Ingresa número de la tabla"))
-                    let base = parseInt(prompt(" Ingresa hasta donde quieres que multiplique"))
-                    function multiplicacion() {
+        <div class="cuadro-contenedor text-dark px-3">
+            <form id="formulary5">
+                <h1> Tabla de multiplicar </h1>
+                <input type="text" id="numeroTabla">
+                <input type="text" id="numeroLimite">
+                <button type="submit" id="btnCalcular"> Calcular</button>
+            </form>
+            <script>
+                let formulario = document.querySelector("#formulary5")
+                formulario.addEventListener(`submit`, function (evento) {
+                    evento.preventDefault()
+
+                    let numero = evento.target.numeroTabla.value
+                    let limite = evento.target.numeroLimite.value
+                    {
                         let operando = " "
-                        for (let x = 1; x <= base; x++) {
+                        for (let x = 1; x <= limite; x++) {
                             operando = numero * x
-                            document.querySelector('#multiplicar').innerHTML += `
-                        <h1 class="fs-2"> ${numero} X ${x} = ${operando}</h1>
-                `
+                            document.querySelector('#formulary5').innerHTML += `
+                            <div class="h-100">
+                                <h1 class="fs-2"> ${numero} X ${x} = ${operando}</h1>
+                            </div>`
+                            evento.target.reset
                         }
                     }
-                    multiplicacion()
-                </script>
-            </div>
+                    reset
+                })
+            </script>
         </div>
-        <div class="cuadro-fondo">
-            <button><a href="taller1.html"> Taller Sumatoria </a></button>
-            <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
-            <button><a href="taller2.html"> Comparativa par e impar</a></button>
-            <button><a href="taller6.html"> Matriculas</a></button>
-        </div>
+    </div>
+    <div class="cuadro-fondo">
+        <button><a href="taller1.html"> Taller Sumatoria </a></button>
+        <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
+        <button><a href="taller2.html"> Comparativa par e impar</a></button>
+        <button><a href="taller6.html"> Matriculas</a></button>
+    </div>
     </div>
 </body>
 

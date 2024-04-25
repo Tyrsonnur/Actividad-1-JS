@@ -19,32 +19,74 @@
 </head>
 
 <body class="cuadro-principal">
-    <div>
-        <div class="cuadro-comparativa text-dark px-3">
-            <div class="pepitos-pizza">
-                <script>
-                    let edad = prompt("Ingresa tu edad ")
-                    let genero = prompt(" Ingresa tu genero")
+    <div class="d-block">
+        <div class="cuadro-contenedor text-dark px-3 d-flex">
+            <form id="formulary3">
+                <h1> Varifica a que combo aplicas </h1>
+                <input type="text" id="validacionEdadInput" placeholder="Ingresa tu edad">
+                <input type="text" id="validacionGeneroInput" placeholder="Ingresa tu sexo">
+                <button type="submit" id="botonValidar" class="d-flex justify-content-center align-items-center">
+                    Validar </button>
+            </form>
+            <script>
+                let formulario = document.querySelector("#formulary3")
+                formulario.addEventListener("submit", function (evento) {
+                    evento.preventDefault()
+                    let edad = evento.target.validacionEdadInput.value
+                    let genero = evento.target.validacionGeneroInput.value
 
                     if (edad <= 17 && genero === "masculino") {
-                        document.write(" Reclama un Jugo con una porción de pizza tres carnes");
+                        document.querySelector("#formulary3").innerHTML = `
+                        <form id="formulary3">
+                            <h1> Reclama un Jugo con una porción de pizza tres carnes </h1>
+                            <input type="text" id="validacionEdadInput">
+                            <input type="text" id="validacionGeneroInput">
+                            <button type="submit" id="botonValidar"> Validar </button>
+                        </form>`
+                        evento.target.reset
+
                     } else if ((edad <= 17 && genero === "femenino")) {
-                        document.write(" Reclama un Jugo con una porción de pizza Hawaiana");
+                        document.querySelector("#formulary3").innerHTML = `
+                        <form id="formulary3">
+                            <h1> Reclama un Jugo con una porción de pizza Hawaiana </h1>
+                            <input type="text" id="validacionEdadInput">
+                            <input type="text" id="validacionGeneroInput">
+                            <button type="submit" id="botonValidar"> Validar </button>
+                        </form>`
+                        evento.target.reset
                     }
                     else if (edad => 18 && genero === "masculino") {
-                        document.write("Reclama una birra con una porcion de pizza tres carnes");
+                        document.querySelector("#formulary3").innerHTML = `
+                        <form id="formulary3">
+                            <h1> Reclama una birra con una porcion de pizza tres carnes </h1>
+                                <input type="text" id="validacionEdadInput">
+                                <input type="text" id="validacionGeneroInput">
+                                <button type="submit" id="botonValidar"> Validar </button>
+                        </form>`
+                        evento.target.reset
+                    } else if (edad => 18 && genero === "femenino") {
+                        document.querySelector("#formulary3").innerHTML = `
+                        <form id="formulary3">
+                            <h1> Reclama una birra con una porcion de pizza Hawaiana </h1>
+                            <input type="text" id="validacionEdadInput">
+                            <input type="text" id="validacionGeneroInput">
+                            <button type="submit" id="botonValidar"> Validar </button>
+                        </form>`
+                        evento.target.reset
+                    } else {
+                        document.querySelector("#formulary3").innerHTML = `
+                        <form id="formulary3">
+                <h1> No aplicas a ningún combo </h1>
+                <input type="text" id="validacionEdadInput">
+                <input type="text" id="validacionGeneroInput">
+                <button type="submit" id="botonValidar"> Validar </button>
+            </form>`
+                        evento.target.reset
                     }
-                    else if (edad => 18 && genero === "femenino") {
-                        document.write("Reclama una birra con una porcion de pizza Hawaiana");
-                    }
-                    else {
-                        document.write("Lo siento, no cumples con los requisitos");
-                    }
-
-                </script>
-            </div>
+                })
+            </script>
         </div>
-        <div class="cuadro-fondo">
+        <div class="cuadro-fondo d-flex">
             <button><a href="taller1.html"> Taller Sumatoria </a></button>
             <button><a href="taller2.html"> Par o impar </a></button>
             <button><a href="taller5.html"> Tabla de multiplicar</a></button>
