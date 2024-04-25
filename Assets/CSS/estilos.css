@@ -2,9 +2,9 @@
 /**--color-body: #bafcf3;
 --color-fondo: #faffe6;
 --color-botones: #ff8b8b;**/
---color-body: #ff8b8b;
---color-fondo: #faffe6; 
---color-botones: #bafcf3; 
+--color-body: #44743a;
+--color-fondo: #94cc73; 
+--color-botones: #dd3030; 
 }
 
     .poppins-medium *{
@@ -27,6 +27,8 @@
     margin: 10px;
     background: var(--color-botones);
     border-radius: 25px;
+    border: none;
+    box-shadow: var(--color-body);
 
 }
 
@@ -35,8 +37,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 650px;
+    height: 100%;
+    width: 100%;
     background:var(--color-fondo);
     margin-top: 30px;
     border-radius: 25px;
