@@ -34,7 +34,6 @@
                     evento.preventDefault()
                     let edad = evento.target.validacionEdadInput.value
                     let genero = evento.target.validacionGeneroInput.value
-
                     if (edad <= 17 && genero === "masculino") {
                         document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
@@ -44,7 +43,7 @@
                         </form>`
                         evento.target.reset
 
-                    } else if ((edad <= 17 && genero === "femenino")) {
+                    } else if (edad <= 17 && genero === "femenino") {
                         document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
                             <h1> Reclama un Jugo con una porción de pizza Hawaiana </h1>
@@ -53,7 +52,7 @@
                         </form>`
                         evento.target.reset
                     }
-                    else if (edad => 18 && genero === "masculino") {
+                    else if (edad >= 18 && genero === "masculino") {
                         document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3" class="d-block">
                             <h1> Reclama una birra con una porcion de pizza tres carnes </h1>
@@ -61,7 +60,7 @@
                                 <button type="submit" id="botonValidar" class="d-block align-items-center justify-content-center"> Validar </button>
                         </form>`
                         evento.target.reset
-                    } else if ((edad => 18 && genero === "femenino")) {
+                    } else if (edad >= 18 && genero === "femenino") {
                         document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
                             <h1> Reclama una birra con una porcion de pizza Hawaiana </h1>
