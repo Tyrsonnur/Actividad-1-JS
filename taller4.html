@@ -122,10 +122,10 @@
                             </input>
                             <button id="btnIngresar" class="d-flex my-2"> ingresar </button>
                         </div>
-                        <div class="d-flex justify-content-center align-content-center w-100 h-100 my-5" id="orden">
-
-                        </div>
+                        <section class="d-flex justify-content-start align-content-end w-100 h-100 my-5" id="orden">
+                        </section>
                     </div>
+                    <h2 class="d-flex justify-content-start align-content-end ms-3"> Total: </h2>
                 </div>
             </form>
         </div>
@@ -184,6 +184,7 @@
 
             let orden = document.querySelector("#pedido").value
             let btnIngresar = document.querySelector("#btnIngresar")
+            let divProductos = document.querySelector("#orden")
 
             if (orden != "pagar") {
                 let dataProducto = productos.find(producto => producto.nombre == orden)
@@ -201,18 +202,18 @@
                             </input>
                             <button id="btnIngresar" class="d-flex my-2"> ingresar </button>
                         </div>
-                        <div class="d-flex justify-content-center align-content-center w-100 h-100 my-5" id="orden">
-                            <p> ${orden}</p>
-                        </div>
+                        <section class="d-flex justify-content-center align-content-center w-100 h-100 my-5" id="orden">
+                            <p class="fs-3 fw-bold"> ${orden}</p>
+                        </section>
                     </div>
-                    <div class="d-block align-content-start ms-3">
-                        <h2> ${resultado} </h2>
-                    </div>         
+                    <h2 class="ms-4 d-flex justify-content-start align-content-end"> Total: ${resultado}</h2>
                 </div>
             </form>
                     `
+            } else {
+                prompt("Gustarias en terminar tu compra?")
             }
-        })
+        });
     </script>
 </body>
 
