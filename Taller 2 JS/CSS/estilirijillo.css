@@ -1,0 +1,50 @@
+.cuadro-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor{
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario{
+    margin-left: 350px;
+    margin-top: 100px;
+}
+
+.formulario input{
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-left: 20px;
+}
+
+.formulario input:hover{
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-left: 20px;
+}
+
+.formulario button{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background: #6d6d6d;
+}
+
+.pantalla{
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #000000;
+}
+
+
+
+
+

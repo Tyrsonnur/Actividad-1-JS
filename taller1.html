@@ -18,45 +18,61 @@
     <link rel="stylesheet" href="Assets/CSS/estilos.css">
 </head>
 
-<body class="cuadro-principal">
-    <div class="cuadro-principal d-block">
-        <div>
-            <div class="cuadro-contenedor d-flex text-dark px-3">
-                <form class="d-block" id="formulary1">
-                    <h1 class="px-3"> Ingresa el numero </h1>
-                    <input type="text" id="sumatoriaInput" class="d-block mx-5 ms-4 my-3 w-75">
-                    <button type="submit" id="botobSumatoria" class="d-block mx-5"> Sumar </button>
+<body>
+    <nav class="top-page d-flex justify-content-around bg-dark">
+        <div class="d-block">
+            <a href="menu.html"><img src="Assets/img/LogoBook.jpg" class="img-fluid rounded-start h-100"></a>
+        </div>
+    </nav>
+    <section>
+        <div class="cuadro-principal d-block">
+            <div class="cuadro-contenedor1 d-flex text-dark justify-content-center align-items-center">
+                <form class="row" id="formulary1">
+                    <div class="col-12 div1">
+                        <h1 class="justify-content-center my-2"> Sumatoria Factorial </h1>
+                    </div>
+                    <div class="col-12 div1 justify-content-center align-content-center">
+                        <input type="text" id="sumatoriaInput" class="input-punto1 d-flex my-3 w-75 align-items-center"
+                            placeholder=" Ingresa el número que quieres sumar ">
+                    </div>
+                    <div class=" div1 col-12 d-flex justify-content-center my-5">
+                        <button type="submit" id="botobSumatoria"> Sumar </button>
+                    </div>
                 </form>
             </div>
         </div>
-        <div class="cuadro-fondo d-flex">
-            <button><a href="taller2.html"> Par o Impar </a></button>
-            <button><a href="taller3.html"> Pepito´s pizzeria </a></button>
-            <button><a href="taller5.html"> Tabla de multiplicar</a></button>
-            <button><a href="taller6.html"> Matriculas</a></button>
+        <div class="boton-volver1 d-flex justify-content-center my-4">
+            <a href="menu.html"><button> Volver a menu principal</button></a>
         </div>
-    </div>
-    <script>
-
-        let formulario = document.querySelector("#formulary1")
-
-        formulario.addEventListener("submit", function (evento) {
-            evento.preventDefault();
-            let numero = evento.target.sumatoriaInput.value
-            let base = 0
-            for (let x = 1; x <= numero; x++) {
-                base = base + x
-            }
-
-            document.querySelector('#formulary1').innerHTML = ` 
-        <form class="d-flex" id="formulary1">
-                <h1 class="px-3"> La sumatoria de numeros del 1 al ${numero} es: ${base}</h1>
-                <input type="text" id="sumatoriaInput" class="d-block mx-5 ms-4 my-3 w-75">
-                <button type="submit" id="botobSumatoria" class="d-block mx-5"> Sumar </button>
-            </form>`
-            evento.target.reset
-        })
-    </script>
+    </section>
 </body>
+<script>
+    let formulario1 = document.querySelector("#formulary1")
+
+    formulario1.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+        let numero = evento.target.sumatoriaInput.value
+        let base = 0
+        for (let x = 1; x <= numero; x++) {
+            base = base + x
+        }
+
+        document.querySelector('#formulary1').innerHTML = ` 
+        
+            <form class="row" id="formulary1">
+                    <div class="col-12 div1">
+                    <h1 class="px-3"> La sumatoria de numeros del 1 al ${numero} es: ${base}</h1>
+                    </div>
+                    <div class="col-12 div1 justify-content-center align-content-center">
+                        <input type="text" id="sumatoriaInput" class="input-punto1 d-flex my-3 w-75 align-items-center"
+                            placeholder=" Ingresa el número que quieres sumar ">
+                    </div>
+                    <div class=" div1 col-12 d-flex justify-content-center my-5">
+                        <button type="submit" id="botobSumatoria"> Sumar </button>
+                    </div>
+                </form>`
+        evento.target.reset
+    })
+</script>
 
 </html>

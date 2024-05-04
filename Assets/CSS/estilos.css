@@ -1,61 +1,109 @@
- :root{
-/**--color-body: #bafcf3;
---color-fondo: #faffe6;
---color-botones: #ff8b8b;**/
---color-body: #000000;
---color-fondo: #5c5c5c; 
---color-botones: #dd3030; 
+/** Cuerpo general **/
+*{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-    .poppins-medium *{
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: normal;
+body{
+    background-color: rgb(27,7,246);
+    background-color: linear-gradient(184deg, rgba(27,7,246,1) 0%, rgba(209,6,6,1) 100%);;
+    background-repeat: no-repeat !important;
+background-position: center !important;
+background-size: cover !important;
+height: auto;
 }
 
-.cuadro-principal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-body)
-    
+h1{
+    margin-left: 500px;
+    margin-top: 100px;
 }
-
-.cuadro-principal button{
-    height: 70px;
-    width: 150px;
-    margin: 10px;
-    background: var(--color-botones);
-    border-radius: 25px;
-    border: none;
-    box-shadow: var(--color-body);
-
-}
-
-
-.cuadro-contenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background:var(--color-fondo);
-    margin-top: 30px;
-    border-radius: 25px;
-}
-
 
 .logica-impar{
     display: flex;
 }
 
-.cuadro-fondo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+/** Estilos Pagina #1 **/
+
+.input-punto1{
+    margin-left: 200px;
+margin-top: 300px;
+margin-bottom: 300px;
 }
 
-.cuadro-fondo a{
-    text-decoration: none;
-    color: black;
+.div1{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.cuadro-contenedor1 button{
+    border-radius: 10px;
+    background: #d9e710;
+    border: none;
+}
+
+.boton-volver1 button{
+    border-radius: 10px;
+    background: #d9e710;
+    border: none;
+}
+
+/** Estilos Pagina #2 **/
+
+.div2{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/** Estilos pagina #3 */
+
+.cuadro-contenedor3 input{
+    margin-left: 10px;
+}
+
+/** Estilos Pagina #4" **/
+*{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h1{
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.contenedor-general button{
+    border-radius: 10px;
+    background: #d9e710;
+    border: none;
+    margin-left: 10px;
+}
+
+.top-page{
+    height: 150px;
+}
+
+.tarjetas button{
+height: 30px;
+width: 90px;
+padding-left: 10px;
+}
+
+.card-body{
+    background: #f3fc80;
+    border: none;
+}
+
+.card-body img{
+background-color: #f3fc80;
+}
+
+.cuadro-resumen{
+    height: 400px;
+    width: 500px;
+    border: 2px solid #000000;
+    background:white;
 }

@@ -28,67 +28,71 @@
                 <button type="submit" id="botonValidar" class="d-flex justify-content-center align-items-center">
                     Validar </button>
             </form>
-            <script>
-                let formulario = document.querySelector("#formulary3")
-                formulario.addEventListener("submit", function (evento) {
-                    evento.preventDefault()
-                    let edad = evento.target.validacionEdadInput.value
-                    let genero = evento.target.validacionGeneroInput.value
-                    if (edad <= 17 && genero === "masculino") {
-                        document.querySelector("#formulary3").innerHTML = `
-                        <form id="formulary3">
-                            <h1> Reclama un Jugo con una porción de pizza tres carnes </h1>
-                            <img src="Assets/img/meat and juice.jpg" alt="">                            
-                            <button type="submit" id="botonValidar"> Validar </button>
-                        </form>`
-                        evento.target.reset
+        </div>
+    </div>
+</body>
+<script>
 
-                    } else if (edad <= 17 && genero === "femenino") {
-                        document.querySelector("#formulary3").innerHTML = `
+    let formulario3 = document.querySelector("#formulary3")
+    formulario3.addEventListener("submit", function (evento) {
+        evento.preventDefault()
+        let edad = evento.target.validacionEdadInput.value
+
+        let genero = evento.target.validacionGeneroInput.value
+        if (edad <= 17 && genero === "masculino") {
+            document.querySelector("#formulary3").innerHTML = `
+            <form id="formulary3">
+                <div class="div3 col-12">
+                    <h1> Reclama un Jugo con una porción de pizza tres carnes </h1>
+                </div>
+                <div class="div3 col-12 d-flex justify-content-center">
+                    <img src="Assets/img/meat and juice.jpg" alt="">
+                </div>
+                <div class="div3 col-12 d-flex justify-content-center">
+                    <button type="submit" id="botonValidar"> Validar </button>
+                </div>
+            </form>`
+            evento.target.reset
+
+        } else if (edad <= 17 && genero === "femenino") {
+            document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
                             <h1> Reclama un Jugo con una porción de pizza Hawaiana </h1>
                             <img src="Assets/img/Pineapple and juice.jpg" alt="">
                             <button type="submit" id="botonValidar"> Validar </button>
-                        </form>`
-                        evento.target.reset
-                    }
-                    else if (edad >= 18 && genero === "masculino") {
-                        document.querySelector("#formulary3").innerHTML = `
+                        </form>
+                        `
+            evento.target.reset
+        }
+        else if (edad >= 18 && genero === "masculino") {
+            document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3" class="d-block">
                             <h1> Reclama una birra con una porcion de pizza tres carnes </h1>
                                 <img src="Assets/img/Pizza carnes y birra.jpg" class="d-block ms-4 my-2 justify-content-center align-items-center">
                                 <button type="submit" id="botonValidar" class="d-block align-items-center justify-content-center"> Validar </button>
                         </form>`
-                        evento.target.reset
-                    } else if (edad >= 18 && genero === "femenino") {
-                        document.querySelector("#formulary3").innerHTML = `
+            evento.target.reset
+        } else if (edad >= 18 && genero === "femenino") {
+            document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
                             <h1> Reclama una birra con una porcion de pizza Hawaiana </h1>
                             <img src="Assets/img/Pizza piña y birra.jpg y birra.jpg"
                     class="d-block ms-4 my-2 justify-content-center align-items-center">
                             <button type="submit" id="botonValidar"> Validar </button>
                         </form>`
-                        evento.target.reset
-                    } else {
-                        document.querySelector("#formulary3").innerHTML = `
+            evento.target.reset
+        } else {
+            document.querySelector("#formulary3").innerHTML = `
                         <form id="formulary3">
                 <h1> No aplicas a ningún combo </h1>
                 <input type="text" id="validacionEdadInput">
                 <input type="text" id="validacionGeneroInput">
                 <button type="submit" id="botonValidar"> Validar </button>
-            </form>`
-                        evento.target.reset
-                    }
-                })
-            </script>
-        </div>
-        <div class="cuadro-fondo d-flex">
-            <button><a href="taller1.html"> Taller Sumatoria </a></button>
-            <button><a href="taller2.html"> Par o impar </a></button>
-            <button><a href="taller5.html"> Tabla de multiplicar</a></button>
-            <button><a href="taller6.html"> Matriculas</a></button>
-        </div>
-    </div>
-</body>
+            </form>
+            `
+            evento.target.reset
+        }
+    })
+</script>
 
 </html>

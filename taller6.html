@@ -53,6 +53,9 @@
             } else if (promedio > 5.0) {
                 alert("valor incorrecto, por favor corrige el valor ingresado")
             }
+            else if (promedio == "") {
+                alert("ingresa un valor, verifica")
+            }
             let valorTotal = costoMatricula - (costoMatricula * descuento)
             document.querySelector("#formulary").innerHTML = `
             <form class="d-block" id="formulary">
